@@ -1,0 +1,30 @@
+using System;
+
+
+
+namespace Code
+{
+    public class Account
+    {
+        public int count(int n)
+        {
+            return (int)Math.Sqrt(n);
+        }
+    }
+
+
+    public class Code
+    {
+        public static void Main(String[] args)
+        {
+            Console.WriteLine("Enter the number of bulbs");
+            int n = int.Parse(Console.ReadLine());
+
+            Account a1 = new Account();
+
+            int b = a1.count(n);
+
+            Console.WriteLine("Number of bulbs that are on :" + b);
+        }
+    }
+}
