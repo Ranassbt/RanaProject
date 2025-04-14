@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int[] nums = { 0 , 0, 1 , 1 ,2 ,2,3,3,4};
+        int[] result = removeDuplicates(nums);
+        
+        System.out.println("Array after removing duplicates:");
+        for( int i=0 ; i< result.length ; i++)
+        {
+            System.out.println(result[i] + " ");
+        }
+    }
+    
+    public static int[] removeDuplicates(int[] nums)
+    {
+        if(nums.length == 0 )
+        
+        return new int[0];
+        
+        int count = 1;
+        for(int i =1 ; i< nums.length; i++)
+        {
+            if(nums[i]!=nums[i - 1])
+            {
+                count++;
+            }
+        }
+        int[] unique = new int[count];
+        unique[0] = nums[0];
+        int index = 1;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                unique[index] = nums[i];
+                index++;
+            }
+        }
+
+        return unique;
+    }
+}
